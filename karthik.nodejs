@@ -184,7 +184,6 @@ app.get('/todos/', async (request, response) => {
       }
       break
     //has only search property
-    //scenario 4
     case hasSearchProperty(request.query):
       getTodosQuery = `SELECT * FROM todo WHERE todo like '%${search_q}%';`
       data = await database.all(getTodosQuery)
